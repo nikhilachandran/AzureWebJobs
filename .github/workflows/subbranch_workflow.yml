@@ -36,7 +36,7 @@ jobs:
         dotnet-version: 3.1.101
 
     - name: Install dependencies
-      run: dotnet restore ./src/worker.sln
+      run: dotnet restore ConsoleAppToConnectCRM.sln
 
     - name: Build
-      run: dotnet build ./src/worker.sln --configuration Release --no-restore --output ${{env.BINARIES}}
+      run: dotnet build ConsoleAppToConnectCRM.sln --configuration Release --no-restore --output ${{env.BINARIES}}
