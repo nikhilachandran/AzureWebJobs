@@ -2,6 +2,7 @@
 
 name: CI
 
+env:
   BINARIES: './output/app_data/jobs/triggered/mywebjob' # the last folder name will become the webjob name in the portal
   ZIP_FILE: 'webjob.zip'
   ZIP_PATH: './output'
