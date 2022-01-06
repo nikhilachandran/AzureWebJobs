@@ -7,6 +7,7 @@ env:
   ZIP_FILE: 'webjob.zip'
   ZIP_PATH: './output'
   ZIP_FILEPATH: './output/webjob.zip'
+  NUGET_VERSION: '4.6.1'
   
 # Controls when the workflow will run
 on:
@@ -36,7 +37,7 @@ jobs:
         dotnet-version: 3.1.101
 
     - name: Install dependencies
-      run: dotnet restore ./ConsoleAppToConnectCRM/
-
+      run: dotnet restore ./ConsoleAppToConnectCRM/ConsoleAppToConnectCRM.csproj
+     
     - name: Build
       run: dotnet build ./ConsoleAppToConnectCRM.sln --configuration Release --no-restore --output ${{env.BINARIES}}
