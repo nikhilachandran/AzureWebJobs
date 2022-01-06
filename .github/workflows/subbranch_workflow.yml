@@ -34,10 +34,11 @@ jobs:
     - name: Setup .NET Core
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: 5.0.x
+        dotnet-version: 3.1.x
 
     - name: Install dependencies
       run: dotnet restore ./ConsoleAppToConnectCRM/ConsoleAppToConnectCRM.csproj
      
     - name: Build
-      run: dotnet build ./ConsoleAppToConnectCRM.sln --configuration Release --no-restore --output ${{env.BINARIES}}
+      run: dotnet build ./ConsoleAppToConnectCRM.sln --no-restore --output ${{env.BINARIES}}
+
