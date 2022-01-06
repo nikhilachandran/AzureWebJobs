@@ -36,16 +36,8 @@ jobs:
       with:
         dotnet-version: 3.1.101
 
-    #- name: Install dependencies
-     # run: dotnet restore ./ConsoleAppToConnectCRM/
+    - name: Install dependencies
+      run: dotnet restore ./ConsoleAppToConnectCRM/ConsoleAppToConnectCRM.csproj
      
-    - name: Install Nuget
-      uses: nuget/setup-nuget@v1
-      with:
-        nuget-version: ${{ env.NUGET_VERSION}}
-        
-    - name: NuGet to restore dependencies as well as project-specific tools that are specified in the project file
-      run: nuget restore ./ConsoleAppToConnectCRM/
-
     - name: Build
       run: dotnet build ./ConsoleAppToConnectCRM.sln --configuration Release --no-restore --output ${{env.BINARIES}}
